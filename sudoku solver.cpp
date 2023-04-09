@@ -37,7 +37,8 @@ public:
                             }
                         }
                     }
-                    return false;
+                    //agar koi bhi no place nhi ho pa rha 1 se 9 tak isliye return false kiya aur ek baat isme na base case nhi hai 
+                      return false;
                 }
             }
         }
