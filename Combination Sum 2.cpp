@@ -15,8 +15,9 @@ public:
         }
         for(int i=index;i<candidates.size();i++)
         {
-            if(i>index and candidates[i] == candidates[i-1])
-            {
+            if(i>index and candidates[i] == candidates[i-1])  //filhaal waale index se equal nhi hona chahiye means ab jab agli calling hui jo usse pehle check
+            {                                                 //hua ki i>index (index current state waala hi hai) aur c[i] == c[i-1] to continue mean duplicate 
+                                                              //is not allowed
                 continue;
             }
             v.push_back(candidates[i]);
