@@ -1,0 +1,29 @@
+class Solution {
+public:
+    void countArrangement_util(int &n,int &ans,vector<int>&v,int currNo)
+    {
+        //base case
+        if(currNo == n+1)
+        {
+            ans++;
+            return;
+        }
+
+        //ek case
+        for(int i=1;i<=n;i++)
+        {
+            if(v[i]==0 and (currNo%i == 0 || i%currNo==0))
+            {
+                v[i] = currNo;
+                countArrangement_util(n,ans,v,currNo+1);
+                v[i] = 0;
+            }
+        }
+    }
+    int countArrangement(int n) {
+        vector<int>v(n+1);
+        int ans = 0;
+        countArrangement_util(n,ans,v,1);
+        return ans;
+    }
+};
